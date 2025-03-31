@@ -18,6 +18,8 @@ class ProductSerializer(serializers.ModelSerializer):
         fields = "__all__"
         read_only_fields = ["sku", "id", "created_at", "modified_at", "category_name"]
 
+    
+
     def to_representation(self, instance):
         instance_rep = super().to_representation(instance)
         if instance_rep["stock_status"]:

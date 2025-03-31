@@ -15,6 +15,7 @@ REST_FRAMEWORK["DEFAULT_THROTTLE_RATES"] = {
     "user": "1000/hour",
 }
 
+REST_FRAMEWORK["EXCEPTION_HANDLER"]= "apps.common.exceptions.custom_exception_handler"
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 

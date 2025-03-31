@@ -1,14 +1,14 @@
 from django.utils.translation import gettext_lazy as _
 from django.db import transaction
 from rest_framework.viewsets import ModelViewSet
-from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
 from rest_framework.throttling import AnonRateThrottle
 from .models import Product, Category
 from .serializers import ProductSerializer, CategorySerializer
+from ..common.views import CustomModelViewSet
 
 
-class ProductViewset(ModelViewSet):
+class ProductViewset(CustomModelViewSet):
     throttle_classes = [AnonRateThrottle]
     throttle_scope = "anon"
     permission_classes = [AllowAny]
