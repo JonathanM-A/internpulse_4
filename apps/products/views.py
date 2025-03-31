@@ -25,3 +25,6 @@ class ProductCategoryViewset(ModelViewSet):
     permission_classes = [AllowAny]
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+    http_method_names = [
+        m for m in ModelViewSet.http_method_names if m not in ["patch", "put"]
+    ]
